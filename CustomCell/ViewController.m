@@ -1,0 +1,84 @@
+//
+//  ViewController.m
+//  CustomCell
+//
+//  Created by Marty Burolla on 2/26/15.
+//  Copyright (c) 2015 Marty Burolla. All rights reserved.
+//
+
+#import "ViewController.h"
+#import "Masonry.h"
+#import "CustomCell.h"
+
+@interface ViewController () <UITableViewDataSource, UITableViewDelegate>
+@property (nonatomic, strong) UITableView *tableView;
+@property (nonatomic, strong) NSArray *tableData;
+@end
+
+@implementation ViewController
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    [self createTable];
+    [self setUpConstraints];
+}
+
+#pragma mark - UITableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return _tableData.count;
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.tableView registerClass: [CustomCell class] forCellReuseIdentifier: @"CellID"];
+    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CellID"];
+    cell.label.text = self.tableData[indexPath.row];
+    
+    return cell;
+}
+
+#pragma mark - Create Table
+
+- (void)createTable
+{
+    _tableData = @[ @"one", @"two", @"three"];
+    _tableView = [[UITableView alloc]init];
+    _tableView.dataSource = self;
+    _tableView.delegate = self;
+    
+    [self.view addSubview: _tableView];
+    [_tableView reloadData];
+}
+
+#pragma mark - SetupConstraints
+
+- (void)setUpConstraints
+{
+    [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top).with.offset(20);
+        make.bottom.equalTo(self.view.mas_bottom);
+        make.leading.equalTo(self.view.mas_leading);
+        make.trailing.equalTo(self.view.mas_trailing);
+    }];
+}
+
+
+@end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
