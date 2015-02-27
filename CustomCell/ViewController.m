@@ -21,6 +21,8 @@
 {
     [super viewDidLoad];
     
+    _tableData = @[ @"one", @"two", @"three"];
+    
     [self setUpTable];
     [self setUpConstraints];
 }
@@ -45,7 +47,6 @@
 
 - (void)setUpTable
 {
-    _tableData = @[ @"one", @"two", @"three"];
     _tableView = [[UITableView alloc]init];
     _tableView.dataSource = self;
     _tableView.delegate = self;
