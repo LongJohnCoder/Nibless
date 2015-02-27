@@ -43,6 +43,7 @@
 {
     _customUIView = [[CustomViewUIView alloc] init];
     _customUIView.mas_key = @"customUIView";
+    self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     [self addSubview: _customUIView];
 }
 

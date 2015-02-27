@@ -109,7 +109,7 @@ static CGSize kLabelSize = { 100, 20 };
 - (void)setUpConstraintsForStepper
 {
     [self.stepper mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.trailing.equalTo(self.mas_trailing).with.offset(-10);
+        make.trailing.equalTo(self.mas_trailing).with.offset(-50);
         make.centerY.equalTo(self.mas_centerY);
     }];
 }

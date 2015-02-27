@@ -26,6 +26,7 @@
 		E7AE9E7E1A9FB4E900CBE1DC /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E7D1A9FB4E900CBE1DC /* CustomCell.m */; };
 		E7AE9E841AA0C90B00CBE1DC /* CustomViewUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E831AA0C90B00CBE1DC /* CustomViewUIView.m */; };
 		E7AE9E8A1AA0F33E00CBE1DC /* UIColor+MyColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E891AA0F33E00CBE1DC /* UIColor+MyColors.m */; };
+		E7AE9E8E1AA10FA300CBE1DC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E8D1AA10FA300CBE1DC /* DetailsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,8 @@
 		E7AE9E831AA0C90B00CBE1DC /* CustomViewUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewUIView.m; sourceTree = "<group>"; };
 		E7AE9E881AA0F33E00CBE1DC /* UIColor+MyColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColors.h"; sourceTree = "<group>"; };
 		E7AE9E891AA0F33E00CBE1DC /* UIColor+MyColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColors.m"; sourceTree = "<group>"; };
+		E7AE9E8C1AA10FA300CBE1DC /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
+		E7AE9E8D1AA10FA300CBE1DC /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +208,8 @@
 				E75C6DC11A9FAFFB002F5001 /* Main.storyboard */,
 				E75C6DBE1A9FAFFB002F5001 /* ViewController.h */,
 				E75C6DBF1A9FAFFB002F5001 /* ViewController.m */,
+				E7AE9E8C1AA10FA300CBE1DC /* DetailsViewController.h */,
+				E7AE9E8D1AA10FA300CBE1DC /* DetailsViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -336,6 +341,7 @@
 				E7AE9E771A9FB1F500CBE1DC /* NSArray+MASAdditions.m in Sources */,
 				E7AE9E8A1AA0F33E00CBE1DC /* UIColor+MyColors.m in Sources */,
 				E75C6DC01A9FAFFB002F5001 /* ViewController.m in Sources */,
+				E7AE9E8E1AA10FA300CBE1DC /* DetailsViewController.m in Sources */,
 				E75C6DBD1A9FAFFB002F5001 /* AppDelegate.m in Sources */,
 				E7AE9E741A9FB1F500CBE1DC /* MASLayoutConstraint.m in Sources */,
 				E75C6DBA1A9FAFFB002F5001 /* main.m in Sources */,

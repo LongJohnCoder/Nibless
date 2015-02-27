@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "Masonry.h"
 #import "CustomCell.h"
+#import "DetailsViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -33,6 +34,9 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    DetailsViewController *dvc = [[DetailsViewController alloc] init];
+    [self.navigationController pushViewController:dvc animated:YES];
+    
     NSLog(@"Selected: %ld", (long)indexPath.row);
 }
 
@@ -71,7 +75,7 @@
 - (void)setUpConstraints
 {
     [_tableView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).with.offset(20);
+        make.top.equalTo(self.view.mas_top);
         make.bottom.equalTo(self.view.mas_bottom);
         make.leading.equalTo(self.view.mas_leading);
         make.trailing.equalTo(self.view.mas_trailing);
