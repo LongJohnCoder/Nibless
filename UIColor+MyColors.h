@@ -11,9 +11,9 @@
 @interface UIColor(MyColors)
 
 + (UIColor*)lighterGray;
-
-
-
-
++ (UIColor*)lightBlue;
++ (UIColor*)lightRed;
++ (UIColor*)lightBrown;
++ (UIColor*)lightYellow;
 
 @end

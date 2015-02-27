@@ -51,7 +51,7 @@ static CGSize kLabelSize = { 100, 20 };
 - (void)setUpLabel
 {
     _label = [[UILabel alloc]init];
-    _label.backgroundColor = [UIColor redColor];
+    _label.backgroundColor = [UIColor lightRed];
     _label.mas_key = @"label";
     [self addSubview: _label];
 }
@@ -60,7 +60,7 @@ static CGSize kLabelSize = { 100, 20 };
 {
     _label2 = [[UILabel alloc]init];
     _label2.text = @"This is the bottom label.";
-    _label2.backgroundColor = [UIColor blueColor];
+    _label2.backgroundColor = [UIColor lightYellow];
     _label2.mas_key = @"label2";
     [self addSubview: _label2];
 }
