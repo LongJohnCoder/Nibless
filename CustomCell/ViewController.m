@@ -60,7 +60,8 @@
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.mas_key = @"tableView";
-   
+    _tableView.layoutMargins = UIEdgeInsetsZero;
+    _tableView.separatorInset = UIEdgeInsetsZero;
     
     [self.view addSubview: _tableView];
 }
