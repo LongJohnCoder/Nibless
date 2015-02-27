@@ -20,7 +20,8 @@ const int kHeightOfNavbar = 65;
 {    
     self = [super init];
     if (self!=nil) {
-        _label = [[UILabel alloc]init];
+        [self setUpUserInterface];
+        [self setUpConstraints];
     }
     return self;
 }
@@ -30,15 +31,13 @@ const int kHeightOfNavbar = 65;
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor lightGrayColor];
-    
-    [self setUpUserInterface];
-    [self setUpConstraints];
 }
 
 #pragma mark - Setup UI
 
 -(void)setUpUserInterface
 {
+    _label = [[UILabel alloc]init];
     _label.backgroundColor = [UIColor redColor];
     
     [self.view addSubview: _label];
