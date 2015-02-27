@@ -25,6 +25,7 @@
 		E7AE9E791A9FB1F500CBE1DC /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E6F1A9FB1F500CBE1DC /* View+MASAdditions.m */; };
 		E7AE9E7E1A9FB4E900CBE1DC /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E7D1A9FB4E900CBE1DC /* CustomCell.m */; };
 		E7AE9E841AA0C90B00CBE1DC /* CustomViewUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E831AA0C90B00CBE1DC /* CustomViewUIView.m */; };
+		E7AE9E8A1AA0F33E00CBE1DC /* UIColor+MyColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E891AA0F33E00CBE1DC /* UIColor+MyColors.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,8 @@
 		E7AE9E7D1A9FB4E900CBE1DC /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		E7AE9E821AA0C90B00CBE1DC /* CustomViewUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewUIView.h; sourceTree = "<group>"; };
 		E7AE9E831AA0C90B00CBE1DC /* CustomViewUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewUIView.m; sourceTree = "<group>"; };
+		E7AE9E881AA0F33E00CBE1DC /* UIColor+MyColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+MyColors.h"; sourceTree = "<group>"; };
+		E7AE9E891AA0F33E00CBE1DC /* UIColor+MyColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColors.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +104,7 @@
 		E75C6DAB1A9FAFFB002F5001 = {
 			isa = PBXGroup;
 			children = (
+				E7AE9E8B1AA0FFCC00CBE1DC /* Categories */,
 				E7AE9E7A1A9FB39900CBE1DC /* UI */,
 				E7AE9E581A9FB1CA00CBE1DC /* Lib */,
 				E75C6DB61A9FAFFB002F5001 /* CustomCell */,
@@ -216,6 +220,15 @@
 			name = Table;
 			sourceTree = "<group>";
 		};
+		E7AE9E8B1AA0FFCC00CBE1DC /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				E7AE9E881AA0F33E00CBE1DC /* UIColor+MyColors.h */,
+				E7AE9E891AA0F33E00CBE1DC /* UIColor+MyColors.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,6 +334,7 @@
 				E7AE9E841AA0C90B00CBE1DC /* CustomViewUIView.m in Sources */,
 				E7AE9E711A9FB1F500CBE1DC /* MASCompositeConstraint.m in Sources */,
 				E7AE9E771A9FB1F500CBE1DC /* NSArray+MASAdditions.m in Sources */,
+				E7AE9E8A1AA0F33E00CBE1DC /* UIColor+MyColors.m in Sources */,
 				E75C6DC01A9FAFFB002F5001 /* ViewController.m in Sources */,
 				E75C6DBD1A9FAFFB002F5001 /* AppDelegate.m in Sources */,
 				E7AE9E741A9FB1F500CBE1DC /* MASLayoutConstraint.m in Sources */,

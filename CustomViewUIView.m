@@ -7,6 +7,7 @@
 //
 
 #import "CustomViewUIView.h"
+#import "UIColor+MyColors.h"
 #import "Masonry.h"
 
 static CGSize kLabelSize = { 100, 20 };
@@ -24,7 +25,7 @@ static CGSize kLabelSize = { 100, 20 };
 {    
     self = [super init];
     if (self!=nil) {
-        self.backgroundColor = [UIColor grayColor];
+        self.backgroundColor = [UIColor lighterGray];
         [self setUpUserInterface];
         [self setUpConstraints];
     }
