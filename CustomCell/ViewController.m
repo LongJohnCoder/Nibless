@@ -21,7 +21,7 @@
 {
     [super viewDidLoad];
     
-    [self createTable];
+    [self setUpTable];
     [self setUpConstraints];
 }
 
@@ -34,27 +34,28 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tableView registerClass: [CustomCell class] forCellReuseIdentifier: @"CellID"];
-    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier: @"CellID"];
-    cell.label.text = self.tableData[indexPath.row];
+    [self.tableView registerClass: [CustomCell class] forCellReuseIdentifier: [CustomCell identifier]];
+    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier: [CustomCell identifier]];
+    cell.customUIView.label.text = self.tableData[indexPath.row];
     
     return cell;
 }
 
-#pragma mark - Create Table
+#pragma mark - Setup Table
 
-- (void)createTable
+- (void)setUpTable
 {
     _tableData = @[ @"one", @"two", @"three"];
     _tableView = [[UITableView alloc]init];
     _tableView.dataSource = self;
     _tableView.delegate = self;
+    _tableView.mas_key = @"tableView";
     
     [self.view addSubview: _tableView];
     [_tableView reloadData];
 }
 
-#pragma mark - SetupConstraints
+#pragma mark - Setup Constraints
 
 - (void)setUpConstraints
 {

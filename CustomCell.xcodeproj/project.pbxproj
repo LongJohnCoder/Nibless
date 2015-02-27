@@ -24,6 +24,7 @@
 		E7AE9E781A9FB1F500CBE1DC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E6D1A9FB1F500CBE1DC /* NSLayoutConstraint+MASDebugAdditions.m */; };
 		E7AE9E791A9FB1F500CBE1DC /* View+MASAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E6F1A9FB1F500CBE1DC /* View+MASAdditions.m */; };
 		E7AE9E7E1A9FB4E900CBE1DC /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E7D1A9FB4E900CBE1DC /* CustomCell.m */; };
+		E7AE9E841AA0C90B00CBE1DC /* CustomViewUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E831AA0C90B00CBE1DC /* CustomViewUIView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		E7AE9E701A9FB1F500CBE1DC /* View+MASShorthandAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "View+MASShorthandAdditions.h"; sourceTree = "<group>"; };
 		E7AE9E7C1A9FB4E900CBE1DC /* CustomCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCell.h; sourceTree = "<group>"; };
 		E7AE9E7D1A9FB4E900CBE1DC /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
+		E7AE9E821AA0C90B00CBE1DC /* CustomViewUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomViewUIView.h; sourceTree = "<group>"; };
+		E7AE9E831AA0C90B00CBE1DC /* CustomViewUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomViewUIView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +210,8 @@
 			children = (
 				E7AE9E7C1A9FB4E900CBE1DC /* CustomCell.h */,
 				E7AE9E7D1A9FB4E900CBE1DC /* CustomCell.m */,
+				E7AE9E821AA0C90B00CBE1DC /* CustomViewUIView.h */,
+				E7AE9E831AA0C90B00CBE1DC /* CustomViewUIView.m */,
 			);
 			name = Table;
 			sourceTree = "<group>";
@@ -313,6 +318,7 @@
 			files = (
 				E7AE9E781A9FB1F500CBE1DC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				E7AE9E761A9FB1F500CBE1DC /* MASViewConstraint.m in Sources */,
+				E7AE9E841AA0C90B00CBE1DC /* CustomViewUIView.m in Sources */,
 				E7AE9E711A9FB1F500CBE1DC /* MASCompositeConstraint.m in Sources */,
 				E7AE9E771A9FB1F500CBE1DC /* NSArray+MASAdditions.m in Sources */,
 				E75C6DC01A9FAFFB002F5001 /* ViewController.m in Sources */,

@@ -9,7 +9,15 @@
 #import "CustomCell.h"
 #import "Masonry.h"
 
+@interface CustomCell()
+@end
+
 @implementation CustomCell
+
++ (NSString*)identifier
+{
+    return NSStringFromClass([CustomCell class]);
+}
 
 #pragma mark - Action
 
@@ -33,27 +41,23 @@
 
 - (void)setUpCell
 {
-    self.label = [[UILabel alloc] init];
-    self.label.backgroundColor = [UIColor redColor];
-    self.label.font = [UIFont fontWithName: @"Arial" size:15.0f];
-    
-    [self addSubview: self.label];
+    _customUIView = [[CustomViewUIView alloc] init];
+    _customUIView.mas_key = @"customUIView";
+    [self addSubview: _customUIView];
 }
 
 #pragma mark - Constraints
 
 - (void)setUpConstraints
 {
-    [self.label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.mas_top);
-        make.leading.equalTo(self.mas_leading).with.offset(10);
-        make.trailing.equalTo(self.mas_trailing).with.offset(-10);
-        make.bottom.equalTo(self.mas_bottom);
-        make.height.equalTo(@50);
+    [self.customUIView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(self.mas_height);
+        make.leading.equalTo(self.mas_leading);
+        make.trailing.equalTo(self.mas_trailing);
     }];
 }
 
 
 @end
 
-// Test
+

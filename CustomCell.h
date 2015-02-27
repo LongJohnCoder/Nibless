@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CustomViewUIView.h"
 
 @interface CustomCell : UITableViewCell
-@property (nonatomic, strong) UILabel *label;
+@property (nonatomic, strong) CustomViewUIView *customUIView;
++ (NSString*)identifier;
 @end
