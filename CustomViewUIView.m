@@ -31,6 +31,13 @@ static CGSize kLabelSize = { 100, 20 };
     return self;
 }
 
+#pragma mark - Stepper Action
+
+- (void)stepperValueChanged
+{
+    NSLog(@"Stepper value is: %f", self.stepper.value);
+}
+
 #pragma mark - Setup User Interface
 
 - (void)setUpUserInterface
@@ -62,6 +69,12 @@ static CGSize kLabelSize = { 100, 20 };
     _stepper = [[UIStepper alloc]init];
     _stepper.backgroundColor = [UIColor whiteColor];
     _stepper.mas_key = @"stepper";
+    _stepper.minimumValue = 1;
+    _stepper.maximumValue = 100;
+    _stepper.value = 50;
+    _stepper.stepValue = 1;
+    [_stepper addTarget: self action: @selector(stepperValueChanged) forControlEvents: UIControlEventTouchUpInside];
+    
     [self addSubview: _stepper];
 }
 
