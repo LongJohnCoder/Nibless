@@ -38,7 +38,6 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self.tableView registerClass: [CustomCell class] forCellReuseIdentifier: [CustomCell identifier]];
     CustomCell *cell = [tableView dequeueReusableCellWithIdentifier: [CustomCell identifier]];
     cell.customUIView.label.text = self.tableData[indexPath.row];
     
@@ -50,9 +49,11 @@
 - (void)setUpTable
 {
     _tableView = [[UITableView alloc]init];
+    [_tableView registerClass: [CustomCell class] forCellReuseIdentifier: [CustomCell identifier]];
     _tableView.dataSource = self;
     _tableView.delegate = self;
     _tableView.mas_key = @"tableView";
+   
     
     [self.view addSubview: _tableView];
 }

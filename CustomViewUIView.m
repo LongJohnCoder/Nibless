@@ -20,7 +20,7 @@ static CGSize kLabelSize = { 100, 20 };
 
 #pragma mark - Construction
 
--(instancetype) init
+- (instancetype)init
 {    
     self = [super init];
     if (self!=nil) {
