@@ -10,7 +10,20 @@
 #import "UIColor+MyColors.h"
 #import "Masonry.h"
 
+const int kHeightOfNavbar = 65;
+
 @implementation DetailsViewController
+
+#pragma mark - Lifecycle
+
+- (instancetype)init
+{    
+    self = [super init];
+    if (self!=nil) {
+        _label = [[UILabel alloc]init];
+    }
+    return self;
+}
 
 - (void)viewDidLoad
 {
@@ -26,8 +39,6 @@
 
 -(void)setUpUserInterface
 {
-    _label = [[UILabel alloc]init];
-    _label.text = @"test";
     _label.backgroundColor = [UIColor redColor];
     
     [self.view addSubview: _label];
@@ -38,9 +49,17 @@
 -(void)setUpConstraints
 {
     [_label mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.view.mas_top).with.offset(65);
+        make.top.equalTo(self.view.mas_top).with.offset(kHeightOfNavbar);
     }];
 }
 
 
 @end
+
+
+
+
+
+
+
+

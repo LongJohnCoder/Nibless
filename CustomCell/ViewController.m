@@ -35,6 +35,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     DetailsViewController *dvc = [[DetailsViewController alloc] init];
+    dvc.label.text = self.tableData[indexPath.row];
     [self.navigationController pushViewController:dvc animated:YES];
     
     NSLog(@"Selected: %ld", (long)indexPath.row);
