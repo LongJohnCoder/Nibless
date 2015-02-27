@@ -25,6 +25,8 @@
     
     [self setUpTable];
     [self setUpConstraints];
+    
+    [_tableView reloadData];
 }
 
 #pragma mark - UITableViewDataSource
@@ -53,7 +55,6 @@
     _tableView.mas_key = @"tableView";
     
     [self.view addSubview: _tableView];
-    [_tableView reloadData];
 }
 
 #pragma mark - Setup Constraints
