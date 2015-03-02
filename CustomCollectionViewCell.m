@@ -88,8 +88,8 @@
 {
     for(int i = 1; i < 100; i++)
     {
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, i/2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
-            [_progressView setProgress: i/10.0];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, i/10 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [_progressView setProgress: i/100.0];
         });
     }
 }
