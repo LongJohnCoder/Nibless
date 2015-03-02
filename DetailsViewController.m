@@ -19,6 +19,7 @@ const int kHeightOfNavbar = 65;
 
 @property (nonatomic, strong) UICollectionView* collectionView;
 @property (nonatomic, strong) NSArray* dataToDisplay;
+@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @end
 
 @implementation DetailsViewController
@@ -50,6 +51,17 @@ const int kHeightOfNavbar = 65;
 {
     [self setUpLabel];
     [self setUpCollectionView];
+    [self setUpActivityIndicator];
+}
+
+- (void)setUpActivityIndicator
+{
+    _activityIndicator = [[UIActivityIndicatorView alloc] init];
+    _activityIndicator.backgroundColor = [UIColor clearColor];
+    _activityIndicator.color = [UIColor blackColor];
+    [_activityIndicator startAnimating];
+    
+    [self.view addSubview: _activityIndicator];
 }
 
 - (void)setUpLabel
@@ -80,10 +92,18 @@ const int kHeightOfNavbar = 65;
 
 #pragma mark - Setup Constraints
 
+- (void)setUpConstraintsForActivityIndicator
+{
+    [_activityIndicator mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.equalTo(self.view);
+    }];
+}
+
 -(void)setUpConstraints
 {
     [self setUpConstraintsForLabel];
     [self setUpConstraintsForCollectionView];
+    [self setUpConstraintsForActivityIndicator];
 }
 
 - (void)setUpConstraintsForLabel
@@ -122,6 +142,7 @@ const int kHeightOfNavbar = 65;
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
+    [self.activityIndicator stopAnimating];
     NSLog( @"Selected %ld", (long)indexPath.row);
 }
 
