@@ -14,6 +14,7 @@
 		E75C6DC51A9FAFFB002F5001 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E75C6DC41A9FAFFB002F5001 /* Images.xcassets */; };
 		E75C6DC81A9FAFFB002F5001 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75C6DC61A9FAFFB002F5001 /* LaunchScreen.xib */; };
 		E75C6DD41A9FAFFB002F5001 /* CustomCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E75C6DD31A9FAFFB002F5001 /* CustomCellTests.m */; };
+		E7A666001AA4CA1200F5972D /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A665FF1AA4CA1200F5972D /* CustomCollectionViewCell.m */; };
 		E7AE9E711A9FB1F500CBE1DC /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E5B1A9FB1F500CBE1DC /* MASCompositeConstraint.m */; };
 		E7AE9E721A9FB1F500CBE1DC /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E5E1A9FB1F500CBE1DC /* MASConstraint.m */; };
 		E7AE9E731A9FB1F500CBE1DC /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E601A9FB1F500CBE1DC /* MASConstraintMaker.m */; };
@@ -53,6 +54,8 @@
 		E75C6DCD1A9FAFFB002F5001 /* CustomCellTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CustomCellTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75C6DD21A9FAFFB002F5001 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E75C6DD31A9FAFFB002F5001 /* CustomCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCellTests.m; sourceTree = "<group>"; };
+		E7A665FE1AA4CA1200F5972D /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
+		E7A665FF1AA4CA1200F5972D /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
 		E7AE9E5A1A9FB1F500CBE1DC /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		E7AE9E5B1A9FB1F500CBE1DC /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		E7AE9E5C1A9FB1F500CBE1DC /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -162,6 +165,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		E7A666011AA4CA4200F5972D /* CollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				E7A665FE1AA4CA1200F5972D /* CustomCollectionViewCell.h */,
+				E7A665FF1AA4CA1200F5972D /* CustomCollectionViewCell.m */,
+			);
+			name = CollectionView;
+			sourceTree = "<group>";
+		};
 		E7AE9E581A9FB1CA00CBE1DC /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -203,6 +215,7 @@
 		E7AE9E7A1A9FB39900CBE1DC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E7A666011AA4CA4200F5972D /* CollectionView */,
 				E7AE9E7B1A9FB3BB00CBE1DC /* Table */,
 				E75C6DC61A9FAFFB002F5001 /* LaunchScreen.xib */,
 				E75C6DC11A9FAFFB002F5001 /* Main.storyboard */,
@@ -340,6 +353,7 @@
 				E7AE9E711A9FB1F500CBE1DC /* MASCompositeConstraint.m in Sources */,
 				E7AE9E771A9FB1F500CBE1DC /* NSArray+MASAdditions.m in Sources */,
 				E7AE9E8A1AA0F33E00CBE1DC /* UIColor+MyColors.m in Sources */,
+				E7A666001AA4CA1200F5972D /* CustomCollectionViewCell.m in Sources */,
 				E75C6DC01A9FAFFB002F5001 /* ViewController.m in Sources */,
 				E7AE9E8E1AA10FA300CBE1DC /* DetailsViewController.m in Sources */,
 				E75C6DBD1A9FAFFB002F5001 /* AppDelegate.m in Sources */,

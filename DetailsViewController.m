@@ -9,6 +9,7 @@
 #import "DetailsViewController.h"
 #import "UIColor+MyColors.h"
 #import "Masonry.h"
+#import "CustomCollectionViewCell.h"
 
 const int kHeightOfNavbar = 65;
 
@@ -66,7 +67,7 @@ const int kHeightOfNavbar = 65;
     _collectionView.backgroundColor = [UIColor whiteColor];
     _collectionView.dataSource = self;
     _collectionView.delegate = self;
-    [_collectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier: @"cellIdentifier"];
+    [_collectionView registerClass:[CustomCollectionViewCell class] forCellWithReuseIdentifier: [CustomCollectionViewCell identifier]];
     
     [self.view addSubview: _collectionView];
 }
@@ -105,8 +106,9 @@ const int kHeightOfNavbar = 65;
 
 - (UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath
 {
-    UICollectionViewCell *cell=[collectionView dequeueReusableCellWithReuseIdentifier: @"cellIdentifier" forIndexPath:indexPath];
-    cell.backgroundColor = [UIColor blueColor];
+    CustomCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier: [CustomCollectionViewCell identifier] forIndexPath:indexPath];
+    cell.label.text = _dataToDisplay[indexPath.row];
+    
     return cell;
 }
 
