@@ -60,7 +60,7 @@ const int kHeightOfNavbar = 65;
 - (void)setUpCollectionView
 {
     UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-    aFlowLayout.itemSize = CGSizeMake(100, 100);
+    //aFlowLayout.itemSize = CGSizeMake(100, 100); // Sized by UICollectionViewDelegate.
     aFlowLayout.minimumLineSpacing = 2;
     aFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     aFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
@@ -119,6 +119,13 @@ const int kHeightOfNavbar = 65;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath
 {
     NSLog( @"Selected %ld", (long)indexPath.row);
+}
+
+- (CGSize)collectionView:(UICollectionView *)collectionView
+                  layout:(UICollectionViewLayout *)collectionViewLayout
+  sizeForItemAtIndexPath:(NSIndexPath *)indexPath
+{
+    return CGSizeMake(100,100);
 }
 
 
