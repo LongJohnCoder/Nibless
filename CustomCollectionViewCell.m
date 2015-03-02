@@ -37,7 +37,7 @@
     _label = [[UILabel alloc]init];
     _label.backgroundColor = [UIColor whiteColor];
     
-    [self addSubview: _label];
+    [self.contentView addSubview: _label];
 }
 
 #pragma mark - Constraints

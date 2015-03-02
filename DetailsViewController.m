@@ -61,6 +61,8 @@ const int kHeightOfNavbar = 65;
 {
     UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
     aFlowLayout.itemSize = CGSizeMake(100, 100);
+    aFlowLayout.minimumLineSpacing = 2;
+    aFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     aFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
  
     _collectionView = [[UICollectionView alloc] initWithFrame: CGRectZero collectionViewLayout: aFlowLayout];
