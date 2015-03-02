@@ -10,6 +10,7 @@
 #import "Masonry.h"
 
 @interface CustomCollectionViewCell()
+@property (nonatomic, strong) UIProgressView *progressView;
 @end
 
 @implementation CustomCollectionViewCell
@@ -34,15 +35,35 @@
 
 -(void)setUpUserInterface
 {
+    [self setUpLabel];
+    [self setUpProgressBar];
+}
+
+- (void)setUpLabel
+{
     _label = [[UILabel alloc]init];
     _label.backgroundColor = [UIColor whiteColor];
     
     [self.contentView addSubview: _label];
 }
 
+- (void)setUpProgressBar
+{
+    _progressView = [[UIProgressView alloc] init];
+    [self simulateWork];
+    
+    [self.contentView addSubview: _progressView];
+}
+
 #pragma mark - Constraints
 
 - (void)setUpConstraints
+{
+    [self setUpConstraintsForLabel];
+    [self setUpConstraintsForProgressBar];
+}
+
+- (void)setUpConstraintsForLabel
 {
     [_label mas_makeConstraints:^(MASConstraintMaker *make) {
         make.bottom.equalTo(self.mas_bottom).with.offset(-5);
@@ -51,5 +72,26 @@
     }];
 }
 
+- (void)setUpConstraintsForProgressBar
+{
+    [_progressView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.mas_top);
+        make.leading.equalTo(self.mas_leading);
+        make.trailing.equalTo(self.mas_trailing);
+        make.height.equalTo(@(3));
+    }];
+}
+
+#pragma mark - Simulate work
+
+-(void)simulateWork
+{
+    for(int i = 1; i < 100; i++)
+    {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, i/2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+            [_progressView setProgress: i/10.0];
+        });
+    }
+}
 
 @end
