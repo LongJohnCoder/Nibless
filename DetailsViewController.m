@@ -29,7 +29,7 @@ const int kHeightOfNavbar = 65;
         [self setUpUserInterface];
         [self setUpConstraints];
         
-        _dataToDisplay = @[@"ONE", @"TWO", @"THREE"];
+        _dataToDisplay = @[@"ONE", @"TWO", @"THREE", @"FOUR", @"FIVE", @"SIX", @"SEVEN", @"EIGHT", @"NINE", @"TEN"];
     }
     return self;
 }
@@ -93,7 +93,7 @@ const int kHeightOfNavbar = 65;
        make.top.equalTo(self.label.mas_bottom);
        make.leading.equalTo(self.view.mas_leading);
        make.trailing.equalTo(self.view.mas_trailing);
-       make.bottom.equalTo(self.view.mas_bottom);
+       make.height.equalTo(@300);
    }];
 }
 

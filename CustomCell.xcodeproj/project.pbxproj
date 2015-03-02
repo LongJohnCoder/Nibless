@@ -140,8 +140,8 @@
 			isa = PBXGroup;
 			children = (
 				E75C6DBB1A9FAFFB002F5001 /* AppDelegate.h */,
-				E75C6DC41A9FAFFB002F5001 /* Images.xcassets */,
 				E75C6DBC1A9FAFFB002F5001 /* AppDelegate.m */,
+				E75C6DC41A9FAFFB002F5001 /* Images.xcassets */,
 				E75C6DB81A9FAFFB002F5001 /* Info.plist */,
 				E75C6DB91A9FAFFB002F5001 /* main.m */,
 			);
