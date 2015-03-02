@@ -13,7 +13,10 @@
 
 const int kHeightOfNavbar = 65;
 
-@interface DetailsViewController() <UICollectionViewDataSource, UICollectionViewDelegate>
+@interface DetailsViewController() <UICollectionViewDataSource,
+                                    UICollectionViewDelegate,
+                                    UICollectionViewDelegateFlowLayout>
+
 @property (nonatomic, strong) UICollectionView* collectionView;
 @property (nonatomic, strong) NSArray* dataToDisplay;
 @end
@@ -60,10 +63,11 @@ const int kHeightOfNavbar = 65;
 - (void)setUpCollectionView
 {
     UICollectionViewFlowLayout *aFlowLayout = [[UICollectionViewFlowLayout alloc] init];
-    //aFlowLayout.itemSize = CGSizeMake(100, 100); // Sized by UICollectionViewDelegate.
-    aFlowLayout.minimumLineSpacing = 2;
-    aFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10);
     aFlowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+    
+    //aFlowLayout.itemSize = CGSizeMake(100, 100);                 // Sized by UICollectionViewDelegateFlowLayout
+    //aFlowLayout.minimumLineSpacing = 2;                          // Sized by UICollectionViewDelegateFlowLayout
+    //aFlowLayout.sectionInset = UIEdgeInsetsMake(10, 10, 10, 10); // Sized by UICollectionViewDelegateFlowLayout
  
     _collectionView = [[UICollectionView alloc] initWithFrame: CGRectZero collectionViewLayout: aFlowLayout];
     _collectionView.backgroundColor = [UIColor whiteColor];
@@ -121,6 +125,8 @@ const int kHeightOfNavbar = 65;
     NSLog( @"Selected %ld", (long)indexPath.row);
 }
 
+#pragma mark - UICollectionViewDelegateFlowLayout
+
 - (CGSize)collectionView:(UICollectionView *)collectionView
                   layout:(UICollectionViewLayout *)collectionViewLayout
   sizeForItemAtIndexPath:(NSIndexPath *)indexPath
@@ -128,6 +134,17 @@ const int kHeightOfNavbar = 65;
     return CGSizeMake(100,100);
 }
 
+- (CGFloat)collectionView:(UICollectionView *)collectionView
+                   layout:(UICollectionViewLayout *)collectionViewLayout
+minimumLineSpacingForSectionAtIndex:(NSInteger)section
+{
+    return 5;
+}
+
+- (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
+{
+    return UIEdgeInsetsMake(10, 10, 10, 10);
+}
 
 @end
 
