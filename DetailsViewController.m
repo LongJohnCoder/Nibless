@@ -57,11 +57,31 @@ const int kHeightOfNavbar = 65;
 - (void)setUpActivityIndicator
 {
     _activityIndicator = [[UIActivityIndicatorView alloc] init];
-    _activityIndicator.backgroundColor = [UIColor clearColor];
+    _activityIndicator.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     _activityIndicator.color = [UIColor blackColor];
     [_activityIndicator startAnimating];
     
     [self.view addSubview: _activityIndicator];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        
+        [_activityIndicator stopAnimating];
+        
+        /*
+        [UIView animateWithDuration: 5
+                              delay: 1
+             usingSpringWithDamping: 1
+              initialSpringVelocity: 1
+                            options: UIViewAnimationCurveLinear | UIViewAnimationCurveEaseOut
+                         animations:^{
+                            _activityIndicator.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
+                         }
+                         completion:^(BOOL finished) {
+                             _activityIndicator.backgroundColor = [UIColor clearColor];
+                            [_activityIndicator stopAnimating];
+                         }];
+         */
+    });
 }
 
 - (void)setUpLabel
@@ -95,6 +115,10 @@ const int kHeightOfNavbar = 65;
 - (void)setUpConstraintsForActivityIndicator
 {
     [_activityIndicator mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.view.mas_top);
+        make.leading.equalTo(self.view.mas_leading);
+        make.trailing.equalTo(self.view.mas_trailing);
+        make.bottom.equalTo(self.view.mas_bottom);
         make.center.equalTo(self.view);
     }];
 }
