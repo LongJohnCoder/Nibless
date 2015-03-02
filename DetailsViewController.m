@@ -20,6 +20,7 @@ const int kHeightOfNavbar = 65;
 @property (nonatomic, strong) UICollectionView* collectionView;
 @property (nonatomic, strong) NSArray* dataToDisplay;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, strong) UIPageControl* pageControl;
 @end
 
 @implementation DetailsViewController
@@ -52,6 +53,23 @@ const int kHeightOfNavbar = 65;
     [self setUpLabel];
     [self setUpCollectionView];
     [self setUpActivityIndicator];
+    [self setUpPageControl];
+}
+
+- (void)setUpPageControl
+{
+    _pageControl = [[UIPageControl alloc] init];
+    _pageControl.backgroundColor = [UIColor blackColor];
+    _pageControl.numberOfPages = 2;
+    _pageControl.currentPage = 0;
+    [_pageControl addTarget:self action:@selector(changePage:) forControlEvents:UIControlEventAllEvents];
+    
+    [self.view addSubview: _pageControl];
+}
+
+- (void)changePage:(id)sender
+{
+    
 }
 
 - (void)setUpActivityIndicator
@@ -63,7 +81,7 @@ const int kHeightOfNavbar = 65;
     
     [self.view addSubview: _activityIndicator];
     
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 2 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         
         [_activityIndicator stopAnimating];
         
@@ -110,6 +128,8 @@ const int kHeightOfNavbar = 65;
     [self.view addSubview: _collectionView];
 }
 
+
+
 #pragma mark - Setup Constraints
 
 - (void)setUpConstraintsForActivityIndicator
@@ -128,6 +148,17 @@ const int kHeightOfNavbar = 65;
     [self setUpConstraintsForLabel];
     [self setUpConstraintsForCollectionView];
     [self setUpConstraintsForActivityIndicator];
+    [self setUpConstraintsForPageControl];
+}
+
+- (void)setUpConstraintsForPageControl
+{
+    [_pageControl mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.height.equalTo(@(200));
+        make.leading.equalTo(self.view.mas_leading);
+        make.trailing.equalTo(self.view.mas_trailing);
+        make.bottom.equalTo(self.view.mas_bottom);
+    }];
 }
 
 - (void)setUpConstraintsForLabel
