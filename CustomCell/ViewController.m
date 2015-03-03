@@ -28,6 +28,36 @@
     [self setUpConstraints];
     
     [_tableView reloadData];
+    
+    [self setUpNavigationBar];
+
+}
+
+-(void)barButtonDone
+{
+    NSLog(@"Done.");
+}
+
+#pragma mark - Navigation Item
+
+-(void)setUpNavigationBar
+{
+    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
+                                    initWithTitle: @"Button1"
+                                    style:UIBarButtonItemStyleDone
+                                    target: self
+                                    action: @selector(barButtonDone)];
+    
+    UIBarButtonItem *rightButton2 = [[UIBarButtonItem alloc]
+                                     initWithTitle: @"Button2"
+                                     style:UIBarButtonItemStyleDone
+                                     target: self
+                                     action: @selector(barButtonDone)];
+    
+    NSArray *arrBtns = [[NSArray alloc]initWithObjects: rightButton,rightButton2, nil];
+    
+    self.navigationItem.title = @"Nibless";
+    self.navigationItem.rightBarButtonItems = arrBtns;
 }
 
 #pragma mark - UITableViewDelegate
