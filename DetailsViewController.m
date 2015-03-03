@@ -10,6 +10,7 @@
 #import "UIColor+MyColors.h"
 #import "Masonry.h"
 #import "CustomCollectionViewCell.h"
+#import "ViewForScrollView.h"
 
 const int kHeightOfNavbar = 65;
 
@@ -21,6 +22,7 @@ const int kHeightOfNavbar = 65;
 @property (nonatomic, strong) NSArray* dataToDisplay;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) UIPageControl* pageControl;
+@property (nonatomic, strong) UIScrollView* scrollView;
 @end
 
 @implementation DetailsViewController
@@ -53,7 +55,21 @@ const int kHeightOfNavbar = 65;
     [self setUpLabel];
     [self setUpCollectionView];
     [self setUpActivityIndicator];
-    [self setUpPageControl];
+    //[self setUpPageControl];
+    [self setUpScrollView];
+}
+
+- (void)setUpScrollView
+{
+    _scrollView = [[UIScrollView alloc]init];
+    _scrollView.backgroundColor = [UIColor whiteColor];
+    _scrollView.contentSize = CGSizeMake(1000, 100); 
+    _scrollView.showsHorizontalScrollIndicator = YES;
+ 
+    ViewForScrollView *view = [[ViewForScrollView alloc]init];
+    
+    [_scrollView addSubview: view];
+    [self.view addSubview: _scrollView];
 }
 
 - (void)setUpPageControl
@@ -128,9 +144,26 @@ const int kHeightOfNavbar = 65;
     [self.view addSubview: _collectionView];
 }
 
-
-
 #pragma mark - Setup Constraints
+
+-(void)setUpConstraints
+{
+    [self setUpConstraintsForLabel];
+    [self setUpConstraintsForCollectionView];
+    [self setUpConstraintsForActivityIndicator];
+    //[self setUpConstraintsForPageControl];
+    [self setUpConstraintsForScrollView];
+}
+
+- (void)setUpConstraintsForScrollView
+{
+    [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.collectionView.mas_bottom).with.offset(10);
+        make.leading.equalTo(self.view.mas_leading);
+        make.trailing.equalTo(self.view.mas_trailing);
+        make.bottom.equalTo(self.view.mas_bottom);
+    }];
+}
 
 - (void)setUpConstraintsForActivityIndicator
 {
@@ -141,14 +174,6 @@ const int kHeightOfNavbar = 65;
         make.bottom.equalTo(self.view.mas_bottom);
         make.center.equalTo(self.view);
     }];
-}
-
--(void)setUpConstraints
-{
-    [self setUpConstraintsForLabel];
-    [self setUpConstraintsForCollectionView];
-    [self setUpConstraintsForActivityIndicator];
-    [self setUpConstraintsForPageControl];
 }
 
 - (void)setUpConstraintsForPageControl

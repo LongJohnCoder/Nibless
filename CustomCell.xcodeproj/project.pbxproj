@@ -15,6 +15,7 @@
 		E75C6DC81A9FAFFB002F5001 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E75C6DC61A9FAFFB002F5001 /* LaunchScreen.xib */; };
 		E75C6DD41A9FAFFB002F5001 /* CustomCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E75C6DD31A9FAFFB002F5001 /* CustomCellTests.m */; };
 		E7A666001AA4CA1200F5972D /* CustomCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A665FF1AA4CA1200F5972D /* CustomCollectionViewCell.m */; };
+		E7A6660C1AA6225B00F5972D /* ViewForScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7A6660B1AA6225B00F5972D /* ViewForScrollView.m */; };
 		E7AE9E711A9FB1F500CBE1DC /* MASCompositeConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E5B1A9FB1F500CBE1DC /* MASCompositeConstraint.m */; };
 		E7AE9E721A9FB1F500CBE1DC /* MASConstraint.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E5E1A9FB1F500CBE1DC /* MASConstraint.m */; };
 		E7AE9E731A9FB1F500CBE1DC /* MASConstraintMaker.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E601A9FB1F500CBE1DC /* MASConstraintMaker.m */; };
@@ -56,6 +57,8 @@
 		E75C6DD31A9FAFFB002F5001 /* CustomCellTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomCellTests.m; sourceTree = "<group>"; };
 		E7A665FE1AA4CA1200F5972D /* CustomCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomCollectionViewCell.h; sourceTree = "<group>"; };
 		E7A665FF1AA4CA1200F5972D /* CustomCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCollectionViewCell.m; sourceTree = "<group>"; };
+		E7A6660A1AA6225B00F5972D /* ViewForScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewForScrollView.h; sourceTree = "<group>"; };
+		E7A6660B1AA6225B00F5972D /* ViewForScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewForScrollView.m; sourceTree = "<group>"; };
 		E7AE9E5A1A9FB1F500CBE1DC /* MASCompositeConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASCompositeConstraint.h; sourceTree = "<group>"; };
 		E7AE9E5B1A9FB1F500CBE1DC /* MASCompositeConstraint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASCompositeConstraint.m; sourceTree = "<group>"; };
 		E7AE9E5C1A9FB1F500CBE1DC /* MASConstraint+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASConstraint+Private.h"; sourceTree = "<group>"; };
@@ -174,6 +177,15 @@
 			name = CollectionView;
 			sourceTree = "<group>";
 		};
+		E7A666091AA6221200F5972D /* ScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				E7A6660A1AA6225B00F5972D /* ViewForScrollView.h */,
+				E7A6660B1AA6225B00F5972D /* ViewForScrollView.m */,
+			);
+			name = ScrollView;
+			sourceTree = "<group>";
+		};
 		E7AE9E581A9FB1CA00CBE1DC /* Lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +227,7 @@
 		E7AE9E7A1A9FB39900CBE1DC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E7A666091AA6221200F5972D /* ScrollView */,
 				E7A666011AA4CA4200F5972D /* CollectionView */,
 				E7AE9E7B1A9FB3BB00CBE1DC /* Table */,
 				E75C6DC61A9FAFFB002F5001 /* LaunchScreen.xib */,
@@ -357,6 +370,7 @@
 				E75C6DC01A9FAFFB002F5001 /* ViewController.m in Sources */,
 				E7AE9E8E1AA10FA300CBE1DC /* DetailsViewController.m in Sources */,
 				E75C6DBD1A9FAFFB002F5001 /* AppDelegate.m in Sources */,
+				E7A6660C1AA6225B00F5972D /* ViewForScrollView.m in Sources */,
 				E7AE9E741A9FB1F500CBE1DC /* MASLayoutConstraint.m in Sources */,
 				E75C6DBA1A9FAFFB002F5001 /* main.m in Sources */,
 				E7AE9E791A9FB1F500CBE1DC /* View+MASAdditions.m in Sources */,
