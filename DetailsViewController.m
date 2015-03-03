@@ -14,6 +14,7 @@
 
 const int kHeightOfNavbar = 65;
 const int kBlurLayer = 5150;
+const int kLongPressTime = 5;
 
 @interface DetailsViewController() <UICollectionViewDataSource,
                                     UICollectionViewDelegate,
@@ -25,6 +26,7 @@ const int kBlurLayer = 5150;
 @property (nonatomic, strong) UIPageControl* pageControl;
 @property (nonatomic, strong) UIScrollView* scrollView;
 @property (nonatomic, strong) UISlider* slider;
+@property (nonatomic, strong) UILongPressGestureRecognizer* lonPressGestRecognizer;
 @end
 
 @implementation DetailsViewController
@@ -35,12 +37,18 @@ const int kBlurLayer = 5150;
 {    
     self = [super init];
     if (self!=nil) {
+
         [self setUpUserInterface];
         [self setUpConstraints];
         
         _dataToDisplay = @[@"ONE", @"TWO", @"THREE", @"FOUR", @"FIVE", @"SIX", @"SEVEN", @"EIGHT", @"NINE", @"TEN"];
     }
     return self;
+}
+
+-(void)longPress
+{
+    NSLog( @"Long press from gesture recognizer.");
 }
 
 - (void)viewDidLoad
@@ -54,11 +62,20 @@ const int kBlurLayer = 5150;
 
 -(void)setUpUserInterface
 {
+    [self setUpGestureRecognizer];
     [self setUpLabel];
     [self setUpCollectionView];
     [self setUpScrollView];
     [self setUpSlider];
     [self setUpActivityIndicator];
+}
+
+-(void)setUpGestureRecognizer
+{
+    self.view.userInteractionEnabled = YES;
+    _lonPressGestRecognizer = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress)];
+    _lonPressGestRecognizer.minimumPressDuration = kLongPressTime;
+    [self.view addGestureRecognizer: _lonPressGestRecognizer];
 }
 
 -(void)setUpSlider
