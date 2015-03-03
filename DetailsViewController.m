@@ -13,6 +13,7 @@
 #import "ViewForScrollView.h"
 
 const int kHeightOfNavbar = 65;
+const int kBlurLayer = 5150;
 
 @interface DetailsViewController() <UICollectionViewDataSource,
                                     UICollectionViewDelegate,
@@ -105,31 +106,27 @@ const int kHeightOfNavbar = 65;
 
 - (void)setUpActivityIndicator
 {
+    /*
+    UIVisualEffect *blurEffect;
+    blurEffect = [UIBlurEffect effectWithStyle: UIBlurEffectStyleLight];
+    UIVisualEffectView *visualEffectView;
+    visualEffectView = [[UIVisualEffectView alloc] initWithEffect: blurEffect];
+    visualEffectView.frame = self.view.bounds;
+    visualEffectView.tag = kBlurLayer;
+    [self.view addSubview: visualEffectView];
+     */
+    
     _activityIndicator = [[UIActivityIndicatorView alloc] init];
     _activityIndicator.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
     _activityIndicator.color = [UIColor blackColor];
     [_activityIndicator startAnimating];
-    
     [self.view addSubview: _activityIndicator];
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, 5 * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
         
         [_activityIndicator stopAnimating];
+        [[self.view viewWithTag: kBlurLayer]removeFromSuperview];
         
-        /*
-        [UIView animateWithDuration: 5
-                              delay: 1
-             usingSpringWithDamping: 1
-              initialSpringVelocity: 1
-                            options: UIViewAnimationCurveLinear | UIViewAnimationCurveEaseOut
-                         animations:^{
-                            _activityIndicator.backgroundColor = [UIColor colorWithWhite:0 alpha:0.5];
-                         }
-                         completion:^(BOOL finished) {
-                             _activityIndicator.backgroundColor = [UIColor clearColor];
-                            [_activityIndicator stopAnimating];
-                         }];
-         */
     });
 }
 
