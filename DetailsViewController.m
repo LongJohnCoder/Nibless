@@ -23,6 +23,7 @@ const int kHeightOfNavbar = 65;
 @property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic, strong) UIPageControl* pageControl;
 @property (nonatomic, strong) UIScrollView* scrollView;
+@property (nonatomic, strong) UISlider* slider;
 @end
 
 @implementation DetailsViewController
@@ -55,7 +56,17 @@ const int kHeightOfNavbar = 65;
     [self setUpLabel];
     [self setUpCollectionView];
     [self setUpScrollView];
+    [self setUpSlider];
     [self setUpActivityIndicator];
+}
+
+-(void)setUpSlider
+{
+    _slider = [[UISlider alloc]init];
+    _slider.value = .5;
+    
+    [_slider addTarget:self action:@selector(sliderChanged) forControlEvents:UIControlEventAllEvents];
+    [self.view addSubview: _slider];
 }
 
 - (void)setUpScrollView
@@ -157,12 +168,22 @@ const int kHeightOfNavbar = 65;
     [self setUpConstraintsForActivityIndicator];
     //[self setUpConstraintsForPageControl];
     [self setUpConstraintsForScrollView];
+    [self setupConstraintsForSlider];
+}
+
+-(void)setupConstraintsForSlider
+{
+    [_slider mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.collectionView.mas_bottom);
+        make.leading.equalTo(self.view.mas_leading);
+        make.trailing.equalTo(self.view.mas_trailing);
+    }];
 }
 
 - (void)setUpConstraintsForScrollView
 {
     [_scrollView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(self.collectionView.mas_bottom).with.offset(10);
+        make.top.equalTo(self.collectionView.mas_bottom).with.offset(30);
         make.leading.equalTo(self.view.mas_leading);
         make.trailing.equalTo(self.view.mas_trailing);
         make.bottom.equalTo(self.view.mas_bottom);
@@ -249,6 +270,11 @@ minimumLineSpacingForSectionAtIndex:(NSInteger)section
 - (UIEdgeInsets)collectionView:(UICollectionView *)collectionView layout:(UICollectionViewLayout*)collectionViewLayout insetForSectionAtIndex:(NSInteger)section
 {
     return UIEdgeInsetsMake(10, 10, 10, 10);
+}
+
+-(void)sliderChanged
+{
+     NSLog(@"Slider value = %f", _slider.value);
 }
 
 @end
