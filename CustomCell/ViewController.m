@@ -10,6 +10,7 @@
 #import "Masonry.h"
 #import "CustomCell.h"
 #import "DetailsViewController.h"
+#import "WebViewViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -35,7 +36,8 @@
 
 -(void)barButtonDone
 {
-    NSLog(@"Done.");
+    WebViewViewController *webViewViewController = [[WebViewViewController alloc] init];
+    [self.navigationController pushViewController:webViewViewController animated:YES];
 }
 
 #pragma mark - Navigation Item

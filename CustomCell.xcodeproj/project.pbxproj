@@ -29,6 +29,7 @@
 		E7AE9E841AA0C90B00CBE1DC /* CustomViewUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E831AA0C90B00CBE1DC /* CustomViewUIView.m */; };
 		E7AE9E8A1AA0F33E00CBE1DC /* UIColor+MyColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E891AA0F33E00CBE1DC /* UIColor+MyColors.m */; };
 		E7AE9E8E1AA10FA300CBE1DC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E8D1AA10FA300CBE1DC /* DetailsViewController.m */; };
+		E7E14C981AA64FB80069DCF7 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E14C971AA64FB80069DCF7 /* WebViewViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,8 @@
 		E7AE9E891AA0F33E00CBE1DC /* UIColor+MyColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+MyColors.m"; sourceTree = "<group>"; };
 		E7AE9E8C1AA10FA300CBE1DC /* DetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailsViewController.h; sourceTree = "<group>"; };
 		E7AE9E8D1AA10FA300CBE1DC /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
+		E7E14C961AA64FB80069DCF7 /* WebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
+		E7E14C971AA64FB80069DCF7 /* WebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,9 +146,9 @@
 			isa = PBXGroup;
 			children = (
 				E75C6DBB1A9FAFFB002F5001 /* AppDelegate.h */,
+				E75C6DB81A9FAFFB002F5001 /* Info.plist */,
 				E75C6DBC1A9FAFFB002F5001 /* AppDelegate.m */,
 				E75C6DC41A9FAFFB002F5001 /* Images.xcassets */,
-				E75C6DB81A9FAFFB002F5001 /* Info.plist */,
 				E75C6DB91A9FAFFB002F5001 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -236,6 +239,8 @@
 				E75C6DBF1A9FAFFB002F5001 /* ViewController.m */,
 				E7AE9E8C1AA10FA300CBE1DC /* DetailsViewController.h */,
 				E7AE9E8D1AA10FA300CBE1DC /* DetailsViewController.m */,
+				E7E14C961AA64FB80069DCF7 /* WebViewViewController.h */,
+				E7E14C971AA64FB80069DCF7 /* WebViewViewController.m */,
 			);
 			name = UI;
 			sourceTree = "<group>";
@@ -361,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7AE9E781A9FB1F500CBE1DC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
+				E7E14C981AA64FB80069DCF7 /* WebViewViewController.m in Sources */,
 				E7AE9E761A9FB1F500CBE1DC /* MASViewConstraint.m in Sources */,
 				E7AE9E841AA0C90B00CBE1DC /* CustomViewUIView.m in Sources */,
 				E7AE9E711A9FB1F500CBE1DC /* MASCompositeConstraint.m in Sources */,
