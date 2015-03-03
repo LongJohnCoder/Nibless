@@ -233,11 +233,10 @@
 		E7AE9E7A1A9FB39900CBE1DC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				E7E14CCD1AA66E330069DCF7 /* Popover */,
 				E7A666091AA6221200F5972D /* ScrollView */,
 				E7A666011AA4CA4200F5972D /* CollectionView */,
 				E7AE9E7B1A9FB3BB00CBE1DC /* Table */,
-				E7E14C991AA659A40069DCF7 /* PopoverViewController.h */,
-				E7E14C9A1AA659A40069DCF7 /* PopoverViewController.m */,
 				E75C6DC61A9FAFFB002F5001 /* LaunchScreen.xib */,
 				E75C6DC11A9FAFFB002F5001 /* Main.storyboard */,
 				E75C6DBE1A9FAFFB002F5001 /* ViewController.h */,
@@ -268,6 +267,15 @@
 				E7AE9E891AA0F33E00CBE1DC /* UIColor+MyColors.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		E7E14CCD1AA66E330069DCF7 /* Popover */ = {
+			isa = PBXGroup;
+			children = (
+				E7E14C991AA659A40069DCF7 /* PopoverViewController.h */,
+				E7E14C9A1AA659A40069DCF7 /* PopoverViewController.m */,
+			);
+			name = Popover;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -516,6 +524,7 @@
 				INFOPLIST_FILE = CustomCell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -526,6 +535,7 @@
 				INFOPLIST_FILE = CustomCell/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

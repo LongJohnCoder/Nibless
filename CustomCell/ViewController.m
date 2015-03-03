@@ -16,6 +16,8 @@
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) NSArray *tableData;
+@property (nonatomic, strong) UIBarButtonItem* popOverButton;
+@property (nonatomic, strong) UIBarButtonItem* webViewButton;
 @end
 
 @implementation ViewController
@@ -41,44 +43,47 @@
     [self.navigationController pushViewController:webViewViewController animated:YES];
 }
 
--(void)popOver
+-(void)popOver:(id)sender
+{
+    [self setUpPopover: sender];
+}
+
+-(void)setUpPopover: (id)sender
 {
     if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
     {
-        PopoverViewController* pvc = [[PopoverViewController alloc]init];
+        PopoverViewController* pvc = [[PopoverViewController alloc] init];
         UIPopoverController* popOverController = [[UIPopoverController alloc] initWithContentViewController: pvc];
-        popOverController.popoverContentSize = CGSizeMake(100, 100);
-        [popOverController presentPopoverFromRect: CGRectMake(0, 0, 100, 100) inView: self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+        popOverController.popoverContentSize = CGSizeMake(150, 300);
+        
+        [popOverController presentPopoverFromRect: [[sender view] frame]
+                                           inView: self.view
+                         permittedArrowDirections: UIPopoverArrowDirectionAny
+                                         animated: YES];
     }
     else{
         NSLog(@"Not an iPad.");
     }
- 
-    /*
-    NewViewController *newViewController = [[NewViewController alloc] initWithNibName:@"NewViewController" bundle:nil];
-    popoverController = [[UIPopoverController alloc] initWithContentViewController:newViewController];
-    popoverController.popoverContentSize = CGSizeMake(320.0, 400.0);
-    [popoverController presentPopoverFromRect:[(UIButton *)sender frame]  inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
-     */
 }
+
 
 #pragma mark - Navigation Item
 
 -(void)setUpNavigationBar
 {
-    UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
+    _popOverButton = [[UIBarButtonItem alloc]
                                     initWithTitle: @"WebView"
                                     style:UIBarButtonItemStyleDone
                                     target: self
                                     action: @selector(barButtonDone)];
     
-    UIBarButtonItem *rightButton2 = [[UIBarButtonItem alloc]
-                                     initWithTitle: @"Popover"
-                                     style:UIBarButtonItemStyleDone
-                                     target: self
-                                     action: @selector(popOver)];
+    _webViewButton = [[UIBarButtonItem alloc]
+                     initWithTitle: @"Popover"
+                             style: UIBarButtonItemStyleDone
+                            target: self
+                      action: @selector(popOver:)];
     
-    NSArray *arrBtns = [[NSArray alloc]initWithObjects: rightButton,rightButton2, nil];
+    NSArray *arrBtns = [[NSArray alloc]initWithObjects: _popOverButton, _webViewButton, nil];
     
     self.navigationItem.title = @"Nibless";
     self.navigationItem.rightBarButtonItems = arrBtns;
