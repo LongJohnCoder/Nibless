@@ -24,7 +24,7 @@
 {    
     self = [super initWithFrame:frame];
     if (self!=nil) {
-        self.backgroundColor = [UIColor greenColor];
+        self.backgroundColor = [UIColor grayColor];
         [self setUpUserInterface];
         [self setUpConstraints];
     }
@@ -50,6 +50,8 @@
 - (void)setUpProgressBar
 {
     _progressView = [[UIProgressView alloc] init];
+    _progressView.trackTintColor = [UIColor blackColor];
+    _progressView.tintColor = [UIColor greenColor];
     [self simulateWork];
     
     [self.contentView addSubview: _progressView];
