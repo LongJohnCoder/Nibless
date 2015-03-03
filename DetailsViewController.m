@@ -54,9 +54,8 @@ const int kHeightOfNavbar = 65;
 {
     [self setUpLabel];
     [self setUpCollectionView];
-    [self setUpActivityIndicator];
-    //[self setUpPageControl];
     [self setUpScrollView];
+    [self setUpActivityIndicator];
 }
 
 - (void)setUpScrollView
