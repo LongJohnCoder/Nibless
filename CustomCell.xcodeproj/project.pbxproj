@@ -30,6 +30,7 @@
 		E7AE9E8A1AA0F33E00CBE1DC /* UIColor+MyColors.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E891AA0F33E00CBE1DC /* UIColor+MyColors.m */; };
 		E7AE9E8E1AA10FA300CBE1DC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E8D1AA10FA300CBE1DC /* DetailsViewController.m */; };
 		E7E14C981AA64FB80069DCF7 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E14C971AA64FB80069DCF7 /* WebViewViewController.m */; };
+		E7E14C9B1AA659A40069DCF7 /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E14C9A1AA659A40069DCF7 /* PopoverViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -93,6 +94,8 @@
 		E7AE9E8D1AA10FA300CBE1DC /* DetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailsViewController.m; sourceTree = "<group>"; };
 		E7E14C961AA64FB80069DCF7 /* WebViewViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebViewViewController.h; sourceTree = "<group>"; };
 		E7E14C971AA64FB80069DCF7 /* WebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
+		E7E14C991AA659A40069DCF7 /* PopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
+		E7E14C9A1AA659A40069DCF7 /* PopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -233,6 +236,8 @@
 				E7A666091AA6221200F5972D /* ScrollView */,
 				E7A666011AA4CA4200F5972D /* CollectionView */,
 				E7AE9E7B1A9FB3BB00CBE1DC /* Table */,
+				E7E14C991AA659A40069DCF7 /* PopoverViewController.h */,
+				E7E14C9A1AA659A40069DCF7 /* PopoverViewController.m */,
 				E75C6DC61A9FAFFB002F5001 /* LaunchScreen.xib */,
 				E75C6DC11A9FAFFB002F5001 /* Main.storyboard */,
 				E75C6DBE1A9FAFFB002F5001 /* ViewController.h */,
@@ -373,6 +378,7 @@
 				E7AE9E771A9FB1F500CBE1DC /* NSArray+MASAdditions.m in Sources */,
 				E7AE9E8A1AA0F33E00CBE1DC /* UIColor+MyColors.m in Sources */,
 				E7A666001AA4CA1200F5972D /* CustomCollectionViewCell.m in Sources */,
+				E7E14C9B1AA659A40069DCF7 /* PopoverViewController.m in Sources */,
 				E75C6DC01A9FAFFB002F5001 /* ViewController.m in Sources */,
 				E7AE9E8E1AA10FA300CBE1DC /* DetailsViewController.m in Sources */,
 				E75C6DBD1A9FAFFB002F5001 /* AppDelegate.m in Sources */,

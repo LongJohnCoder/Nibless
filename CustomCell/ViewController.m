@@ -11,6 +11,7 @@
 #import "CustomCell.h"
 #import "DetailsViewController.h"
 #import "WebViewViewController.h"
+#import "PopoverViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
@@ -40,21 +41,42 @@
     [self.navigationController pushViewController:webViewViewController animated:YES];
 }
 
+-(void)popOver
+{
+    if ( UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad )
+    {
+        PopoverViewController* pvc = [[PopoverViewController alloc]init];
+        UIPopoverController* popOverController = [[UIPopoverController alloc] initWithContentViewController: pvc];
+        popOverController.popoverContentSize = CGSizeMake(100, 100);
+        [popOverController presentPopoverFromRect: CGRectMake(0, 0, 100, 100) inView: self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+    }
+    else{
+        NSLog(@"Not an iPad.");
+    }
+ 
+    /*
+    NewViewController *newViewController = [[NewViewController alloc] initWithNibName:@"NewViewController" bundle:nil];
+    popoverController = [[UIPopoverController alloc] initWithContentViewController:newViewController];
+    popoverController.popoverContentSize = CGSizeMake(320.0, 400.0);
+    [popoverController presentPopoverFromRect:[(UIButton *)sender frame]  inView:self.view permittedArrowDirections:UIPopoverArrowDirectionAny animated:YES];
+     */
+}
+
 #pragma mark - Navigation Item
 
 -(void)setUpNavigationBar
 {
     UIBarButtonItem *rightButton = [[UIBarButtonItem alloc]
-                                    initWithTitle: @"Button1"
+                                    initWithTitle: @"WebView"
                                     style:UIBarButtonItemStyleDone
                                     target: self
                                     action: @selector(barButtonDone)];
     
     UIBarButtonItem *rightButton2 = [[UIBarButtonItem alloc]
-                                     initWithTitle: @"Button2"
+                                     initWithTitle: @"Popover"
                                      style:UIBarButtonItemStyleDone
                                      target: self
-                                     action: @selector(barButtonDone)];
+                                     action: @selector(popOver)];
     
     NSArray *arrBtns = [[NSArray alloc]initWithObjects: rightButton,rightButton2, nil];
     
