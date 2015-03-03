@@ -66,9 +66,14 @@ const int kHeightOfNavbar = 65;
     _scrollView.showsHorizontalScrollIndicator = YES;
  
     ViewForScrollView *view = [[ViewForScrollView alloc]init];
-    
+    view.backgroundColor = [UIColor redColor];
     [_scrollView addSubview: view];
     [self.view addSubview: _scrollView];
+    
+    [view mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(_scrollView.mas_top);
+        make.height.equalTo(@100);
+    }];
 }
 
 - (void)setUpPageControl
