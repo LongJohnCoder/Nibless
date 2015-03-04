@@ -53,19 +53,17 @@
 
 -(void)drawNotes
 {
-    CGRect borderRect = CGRectMake(8.0, 8.0, 5, 5);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1.0);
+    
+    CGRect borderRect = CGRectMake(8.0, 8.0, 5, 5);
     CGContextFillEllipseInRect (context, borderRect);
     CGContextFillPath(context);
     
     borderRect = CGRectMake(8.0, 16.0, 5, 5);
-    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1.0);
     CGContextFillEllipseInRect (context, borderRect);
     CGContextFillPath(context);
     
     borderRect = CGRectMake(8.0, 24.0, 5, 5);
-    CGContextSetRGBStrokeColor(context, 1.0, 1.0, 1.0, 1.0);
     CGContextFillEllipseInRect (context, borderRect);
     CGContextFillPath(context);
 }
