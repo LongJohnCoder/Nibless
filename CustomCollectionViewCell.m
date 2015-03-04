@@ -8,9 +8,11 @@
 
 #import "CustomCollectionViewCell.h"
 #import "Masonry.h"
+#import "ChordUIView.h"
 
 @interface CustomCollectionViewCell()
 @property (nonatomic, strong) UIProgressView *progressView;
+@property (nonatomic, strong) ChordUIView* chordView;
 @end
 
 @implementation CustomCollectionViewCell
@@ -37,6 +39,15 @@
 {
     [self setUpLabel];
     [self setUpProgressBar];
+    [self setUpChord];
+}
+
+- (void)setUpChord
+{
+    _chordView = [[ChordUIView alloc]init];
+    _chordView.backgroundColor = [UIColor whiteColor];
+    
+    [self.contentView addSubview: _chordView];
 }
 
 - (void)setUpLabel
@@ -63,6 +74,17 @@
 {
     [self setUpConstraintsForLabel];
     [self setUpConstraintsForProgressBar];
+    [self setUpConstraintsForChord];
+}
+
+- (void)setUpConstraintsForChord
+{
+    [_chordView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.top.equalTo(self.mas_top).with.offset(10);
+        make.leading.equalTo(self.mas_leading).with.offset(20);
+        make.trailing.equalTo(self.mas_trailing).with.offset(-20);
+        make.height.equalTo(@(60));
+    }];
 }
 
 - (void)setUpConstraintsForLabel

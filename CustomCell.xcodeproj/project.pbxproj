@@ -31,6 +31,7 @@
 		E7AE9E8E1AA10FA300CBE1DC /* DetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7AE9E8D1AA10FA300CBE1DC /* DetailsViewController.m */; };
 		E7E14C981AA64FB80069DCF7 /* WebViewViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E14C971AA64FB80069DCF7 /* WebViewViewController.m */; };
 		E7E14C9B1AA659A40069DCF7 /* PopoverViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E14C9A1AA659A40069DCF7 /* PopoverViewController.m */; };
+		E7E14CD01AA7A0880069DCF7 /* ChordUIView.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E14CCF1AA7A0880069DCF7 /* ChordUIView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +97,8 @@
 		E7E14C971AA64FB80069DCF7 /* WebViewViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebViewViewController.m; sourceTree = "<group>"; };
 		E7E14C991AA659A40069DCF7 /* PopoverViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopoverViewController.h; sourceTree = "<group>"; };
 		E7E14C9A1AA659A40069DCF7 /* PopoverViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopoverViewController.m; sourceTree = "<group>"; };
+		E7E14CCE1AA7A0880069DCF7 /* ChordUIView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChordUIView.h; sourceTree = "<group>"; };
+		E7E14CCF1AA7A0880069DCF7 /* ChordUIView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChordUIView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 			children = (
 				E7A665FE1AA4CA1200F5972D /* CustomCollectionViewCell.h */,
 				E7A665FF1AA4CA1200F5972D /* CustomCollectionViewCell.m */,
+				E7E14CCE1AA7A0880069DCF7 /* ChordUIView.h */,
+				E7E14CCF1AA7A0880069DCF7 /* ChordUIView.m */,
 			);
 			name = CollectionView;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 				E7AE9E781A9FB1F500CBE1DC /* NSLayoutConstraint+MASDebugAdditions.m in Sources */,
 				E7E14C981AA64FB80069DCF7 /* WebViewViewController.m in Sources */,
 				E7AE9E761A9FB1F500CBE1DC /* MASViewConstraint.m in Sources */,
+				E7E14CD01AA7A0880069DCF7 /* ChordUIView.m in Sources */,
 				E7AE9E841AA0C90B00CBE1DC /* CustomViewUIView.m in Sources */,
 				E7AE9E711A9FB1F500CBE1DC /* MASCompositeConstraint.m in Sources */,
 				E7AE9E771A9FB1F500CBE1DC /* NSArray+MASAdditions.m in Sources */,
